@@ -13,7 +13,11 @@ from diarizer import Request, Response, Timespan, new_v1_api_app
 
 from pyannote.audio import Pipeline
 
-pipeline = Pipeline.from_pretrained("pyannote/speaker-diarization-3.1")
+pipeline = Pipeline.from_pretrained(os.getenv("MODEL", "pyannote/speaker-diarization-3.1"),
+    use_auth_token="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") # mgood's token for now
+# pipeline = Pipeline.from_pretrained(
+#     "pyannote/speaker-diarization-3.1@84fd25912480287da0247647c3d2b4853cb3ee5d",
+#     use_auth_token="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") # mgood's token for now
 
 # send pipeline to GPU (when available)
 import torch

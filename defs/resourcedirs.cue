@@ -24,6 +24,7 @@ resourcedirs: [id=(string & =~"^huggingface:[^:]+:[^:]+:[^:]+(:[^:]+)?$")]: {
       "--cache-dir", "/res/huggingface/cache",
       "--local-dir", "/res/huggingface/local",
       "--local-dir-use-symlinks", "True",
+      "--token", "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",
       repo,
       if file != "" {
         file,
